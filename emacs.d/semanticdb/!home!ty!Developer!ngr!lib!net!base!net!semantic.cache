@@ -1,0 +1,144 @@
+;; Object net/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "net/"
+  :tables (list 
+   (semanticdb-table "worker.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("ostream" include (:system-flag t) nil [1 19])
+            ("worker.h" include nil nil [20 39])
+            ("adapter.h" include nil nil [40 60])
+            ("sse_memcpy" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("to" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [80 90])
+                    ("from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [91 109])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [110 121]))                  
+                :type "void")
+                nil [62 122])
+            ("QInternal_CallBackTable" type
+               (:members 
+                  ( ("callbacks" variable (:type ("QVector" type
+                         (:template-specifier 
+                            ( ("QList" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [161 215]))                  
+                :type "struct")
+                nil [124 218])
+            ("Q_GLOBAL_STATIC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("QInternal_CallBackTable" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [236 260])
+                    ("" variable (:type ("global_callback_table" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [261 283]))                  
+                :type "int")
+                nil [220 284])
+            ("Worker" function
+               (:constructor-flag t
+                :parent "Worker"
+                :arguments 
+                  ( ("queue" variable
+                       (:reference 1
+                        :type ("NICWorkQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [301 321]))                  
+                :type ("Worker" type (:type "class") nil nil))
+                nil [286 495])
+            ("Worker" function
+               (:constructor-flag t
+                :parent "Worker"
+                :arguments 
+                  ( ("queue" variable
+                       (:reference 1
+                        :type ("NICWorkQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [512 532])
+                    ("nic" variable
+                       (:pointer 1
+                        :type ("NetworkPort" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [533 550]))                  
+                :type ("Worker" type (:type "class") nil nil))
+                nil [497 723])
+            ("setWorkQueue" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("queue" variable
+                       (:reference 1
+                        :type ("NICWorkQueue" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [751 771]))                  
+                :type "void")
+                nil [725 800])
+            ("run" function
+               (:parent "Worker"
+                :type "void")
+                nil [802 1871])
+            ("isRunning" function
+               (:parent "Worker"
+                :type "bool")
+                nil [1873 1932])
+            ("stopRunning" function
+               (:parent "Worker"
+                :type "void")
+                nil [1934 1986])
+            ("registerCallback" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("cb" variable (:type ("QInternal::Callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2018 2041])
+                    ("callback" variable (:type ("PNGR_NET_CALLBACK_FUNCTION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2072 2108])
+                    ("context" variable (:type ("PVOID" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2139 2153])
+                    ("timeout" variable (:type ("ULONG" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2184 2207]))                  
+                :type "bool")
+                nil [1988 2578])
+            ("unregisterCallback" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("cb" variable (:type ("QInternal::Callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2612 2635])
+                    ("callback" variable (:type ("PNGR_NET_CALLBACK_FUNCTION" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2636 2672]))                  
+                :type "bool")
+                nil [2580 2984])
+            ("activateCallbacks" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("cb" variable (:type ("QInternal::Callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3017 3040])
+                    ("parameters" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3041 3059]))                  
+                :type "bool")
+                nil [2986 3527])
+            ("read" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3547 3557])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [3558 3567])
+                    ("len" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3568 3577]))                  
+                :type "bool")
+                nil [3529 4520])
+            ("setBoost" function
+               (:parent "Worker"
+                :arguments 
+                  ( ("boost" variable (:type "bool") (reparse-symbol arg-sub-list) [4544 4555]))                  
+                :type "bool")
+                nil [4522 4605]))          
+    :file "worker.cpp"
+    :pointmax 4606
+    :fsize 4613
+    :lastmodtime '(22173 55001 868581 478000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!ty!Developer!ngr!lib!net!base!net!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
