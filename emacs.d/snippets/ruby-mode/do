@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: do
+# --
+do${1: |${2:params}|}
+  $0
+end

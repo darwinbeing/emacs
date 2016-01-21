@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: df
+# --
+def ${1:method_name}${2:(${3:params})}
+  $0
+end
