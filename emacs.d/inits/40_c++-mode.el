@@ -8,6 +8,6 @@
 	  '(lambda()
 	     (setq c-basic-offset 8)))
 
-(add-hook 'c++-mode-hook
+(add-hook 'c++-mode-common-hook
 	  '(lambda()
 	     (c-toggle-auto-hungry-state)))
