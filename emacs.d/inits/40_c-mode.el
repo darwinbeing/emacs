@@ -6,4 +6,8 @@
 
 (add-hook 'c-mode-hook
           '(lambda ()
-             (setq c-basic-offset 4)))
+             (setq c-basic-offset 8)))
+
+(add-hook 'c-mode-hook
+	  '(lambda()
+	     (c-toggle-auto-hungry-state)))

@@ -16,7 +16,6 @@
 (setq font-lock-maximum-decoration t)
 
 (setq enable-recursive-minibuffers t)
-(setq inhibit-startup-message t)
 
 ;; (menu-bar-mode nil)
 ;; (tool-bar-mode nil)
@@ -53,9 +52,9 @@
 ;; (set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
 
 ;;; font-lock settings
-(set-face-foreground 'font-lock-comment-face "red1")
-(if (<= emacs-major-version 21)
-    (global-font-lock-mode t))
+;; (set-face-foreground 'font-lock-comment-face "red1")
+;; (if (<= emacs-major-version 21)
+;;     (global-font-lock-mode t))
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-font-lock)
 (add-hook 'c-mode-hook 'turn-on-font-lock)

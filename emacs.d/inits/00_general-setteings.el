@@ -1,12 +1,9 @@
 ;;; general settings
 
 (transient-mark-mode t)
-(define-key ctl-x-map "n" 'goto-line)
-(define-key ctl-x-map "\\" 'indent-region)
 (put 'upcase-region 'disabled nil)
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
-(setq line-number-mode t)
 (setq column-number-mode t)
 (setq default-tab-with 8)
 
@@ -25,8 +22,6 @@
 (set-background-color "black")
 ;; (menu-bar-mode nil)
 (setq require-final-newline t)
-
-(global-set-key "\M-g" 'goto-line)
 
 (defvar autosave-dir
   (concat "/tmp/emacs_autosaves/" (user-login-name) "/"))
@@ -68,30 +63,15 @@
   (replace-match "" nil t))
 )
 
-(global-set-key [f1]  'help-command)
-(global-set-key [f2]  'save-buffer)
-(global-set-key [f3]  'undo)
-(global-set-key [f4]  'replace-string)
-(global-set-key [f5]  'kdab-insert-header)
-(global-set-key [f6]  'kdab-insert-forward-decl)
-(global-set-key [f7]  'compile)
-(global-set-key [f8]  'other-window)
-(global-set-key [f9]  'find-file)
-(global-set-key [f10] 'wb-line-number-toggle)
-(global-set-key [f11] 'remove-ctl-m)
-(global-set-key [f12] 'indent-region)
-
-;; (require 'wb-line-number)
 (set-scroll-bar-mode nil)
-;;(wb-line-number-toggle)
-(line-number-mode 1)
+(global-linum-mode t)
+(setq linum-format "%4d")
 
 (defun beginning-of-line-or-non-whitespace ()
   (interactive)
   (if (bolp)
       (back-to-indentation)
     (beginning-of-line)))
-(global-set-key [home] 'beginning-of-line-or-non-whitespace)
 
 (setq kill-whole-line t)
 
@@ -100,9 +80,6 @@
   (beginning-of-line)
   (kill-line)
 )
-(define-key ctl-x-map "k"  'kill-current-line)
-(global-set-key (kbd "C-c l") 'add-change-log-entry-other-window)
-
 (display-time-mode t)
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
@@ -122,8 +99,6 @@
 (setq save-place-file "/tmp/saveplace/files")
 (setq-default save-place t)
 
-(global-set-key "\C-x\C-x" 'kill-this-buffer)
-
 (setq track-eol t)
 
 (require 'hl-line)
@@ -133,8 +108,6 @@
   "Face to use for `hl-line-face'." :group 'hl-line)
 (setq hl-line-face 'hl-line)
 
-
-(global-set-key (kbd "C-x d") 'ediff)
 ;; (load-library "ediff")
 ;; (add-hook 'ediff-before-setup-hook 'new-frame)
 ;; (add-hook 'ediff-quit-hook 'delete-frame)
@@ -174,7 +147,6 @@
 (add-to-list 'hs-special-modes-alist
              '(c++-mode "[\n\t ]*{" "}" "/[*/]" nil hs-c-like-adjust-block-beginning))
 
-(define-key global-map (kbd "C-h") 'hs-toggle-hiding)
 
 (defvar ediff-after-quit-hooks nil
   "* Hooks to run after ediff or emerge is quit.")

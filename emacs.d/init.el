@@ -1,5 +1,5 @@
 ;;; load-path settings
-(add-to-list 'load-path "~/.emacs.d/sitel-lisp")
+(add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 
 ;;; load configuration scripts
