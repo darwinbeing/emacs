@@ -203,4 +203,11 @@
 (add-hook 'ediff-after-quit-hooks 'git-mergetool-emacsclient-ediff-after-quit-hook 'append)
 
 ; for emacsclient
-(server-start)
+;; (unless (server-running-p)
+;;   (server-start))
+
+(require 'server)
+(unless (server-running-p)
+  ;; (if (< emacs-major-version 23)
+  (server-start))
+;; )
