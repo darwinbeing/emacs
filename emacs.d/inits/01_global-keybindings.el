@@ -22,3 +22,16 @@
 (global-set-key (kbd "C-c l") 'add-change-log-entry-other-window)
 (global-set-key "\C-x\C-x" 'kill-this-buffer)
 (global-set-key (kbd "C-x d") 'ediff)
+
+;; Linux
+(global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+
+;; MacOS/Windows
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+
+;;;;苹果键位remap
+;; (setq mac-command-modifier 'meta) ;映射苹果键
+;; (setq mac-control-modifier 'control) ;映射Ctrl键
+;; (setq mac-option-modifier 'alt) ;映射Alt键
