@@ -153,14 +153,14 @@
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
 (add-to-list 'auto-mode-alist '("\\.[ds]?vh?\\'" . verilog-mode))
 
-(setq verilog-indent-level             4
-      verilog-indent-level-module      4
-      verilog-indent-level-declaration 4
-      verilog-indent-level-behavioral  4
-      verilog-indent-level-directive   1
-      verilog-case-indent              4
-      verilog-cexp-indent              4
-      verilog-if-indent                4
+(setq verilog-indent-level             8
+      verilog-indent-level-module      8
+      verilog-indent-level-declaration 8
+      verilog-indent-level-behavioral  8
+      verilog-indent-level-directive   0
+      verilog-case-indent              0
+      verilog-cexp-indent              8
+      verilog-if-indent                8
       verilog-auto-newline             nil
       verilog-auto-indent-on-newline   t
       verilog-tab-always-indent        t
