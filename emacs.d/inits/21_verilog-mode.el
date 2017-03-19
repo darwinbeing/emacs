@@ -1,8 +1,8 @@
 (require 'verilog-mode)
 
 ;; Verilog-mode
-(setq auto-mode-alist (cons '("\\.v\\'" . verilog-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.tb\\'" . verilog-mode) auto-mode-alist))
+;; (setq auto-mode-alist (cons '("\\.v\\'" . verilog-mode) auto-mode-alist))
+;; (setq auto-mode-alist (cons '("\\.tb\\'" . verilog-mode) auto-mode-alist))
 
 (add-hook 'verilog-mode-hook '(lambda ()
                                 (font-lock-mode 1)
@@ -64,23 +64,23 @@
 ;;       verilog-indent-declaration-macros t
 ;;       verilog-auto-delete-trailing-whitespace t)
 
-(setq verilog-align-ifelse t
-      verilog-auto-delete-trailing-whitespace t
-      verilog-auto-inst-param-value t
-      verilog-auto-inst-vector nil
-      verilog-auto-lineup (quote all)
-      verilog-auto-newline nil
-      verilog-auto-save-policy nil
-      verilog-auto-template-warn-unused t
-      verilog-case-indent 8
-      verilog-cexp-indent 8
-      verilog-highlight-grouping-keywords t
-      verilog-highlight-modules t
-      verilog-indent-level 8
-      verilog-indent-level-behavioral 8
-      verilog-indent-level-declaration 8
-      verilog-indent-level-module 8
-      verilog-tab-to-comment nil)
+;; (setq verilog-align-ifelse t
+;;       verilog-auto-delete-trailing-whitespace t
+;;       verilog-auto-inst-param-value t
+;;       verilog-auto-inst-vector nil
+;;       verilog-auto-lineup (quote all)
+;;       verilog-auto-newline t
+;;       verilog-auto-save-policy nil
+;;       verilog-auto-template-warn-unused t
+;;       verilog-case-indent 8
+;;       verilog-cexp-indent 8
+;;       verilog-highlight-grouping-keywords t
+;;       verilog-highlight-modules t
+;;       verilog-indent-level 8
+;;       verilog-indent-level-behavioral 8
+;;       verilog-indent-level-declaration 8
+;;       verilog-indent-level-module 8
+;;       verilog-tab-to-comment nil)
 
 ;; (setq verilog-indent-level 4
 ;;       verilog-indent-level-module 4
@@ -96,6 +96,85 @@
 ;;       verilog-auto-endcomments nil
 ;;       verilog-auto-lineup 'declarations)
 ;; (setq show-trailing-whitespace t)
+
+;;;--------------------------------------------------------------------
+;;; Verilog mode (verilog-mode.el)
+;;; まだnatureやdiscipline関係のインデントを誤判定してしまう．
+;;;--------------------------------------------------------------------
+;;; C-;にインデント付きの改行をアサイン．
+;; (add-hook 'verilog-mode-hook
+;; 		  '(lambda ()
+;; 			 ;; デフォルトでは\C-jはアサインされていないようなのでそのまま．
+;; 			 ;; (define-key matlab-mode-map "\C-j" 'ce-next-line)
+;; 			 ;; Returnはデフォルトの設定'electric-verilog-terminate-and-indent
+;; 			 ;; で支障が出てないのでそのまま．
+;; 			 ;; (define-key verilog-mode-map [return] 'newline)
+;; 			 ;; (define-key verilog-mode-map [(control \;)] 'electric-verilog-terminate-and-indent)
+;; 			 ;; 'newlineと使い分ける必要が出てくるかもしれないので，\C-;を使う．
+;; 			 ;; (define-key verilog-mode-map [(control \;)] 'electric-verilog-terminate-line)
+;; 			 (define-key verilog-mode-map (kbd "C-;") 'recenter-top-bottom)
+;; 			 )
+;; )
+
+;; User customization
+;; (setq verilog-indent-level             3
+;; 	  verilog-indent-level-module      3
+;; 	  verilog-indent-level-declaration 3
+;; 	  verilog-indent-level-behavioral  3
+;; 	  verilog-indent-level-directive   1
+;; 	  verilog-case-indent              2
+;; 	  verilog-auto-newline             nil ;Changed
+;; 	  verilog-auto-indent-on-newline   t
+;; 	  verilog-tab-always-indent        t
+;; 	  verilog-auto-endcomments         t
+;; 	  verilog-minimum-comment-distance 40
+;; 	  verilog-indent-begin-after-if    t
+;; 	  verilog-auto-lineup              'all ;'declarations => 'all
+;; 	  verilog-highlight-p1800-keywords nil
+;; 	  verilog-linter                   "my_lint_shell_command"
+;; 	  )
+
+;; (autoload 'verilog-mode "verilog-mode" "Verilog mode" t)
+;; (setq auto-mode-alist
+;; 	  (append '(("\\.v$"       . verilog-mode)
+;; 				("\\.f$"       . verilog-mode)
+;; 				("\\.sv$"      . verilog-mode)
+;; 				("\\.vinc$"    . verilog-mode)
+;; 				;; ("\\.va$"      . verilog-mode)
+;; 				("\\.vams$"    . verilog-mode)
+;; 				("\\.vt*$"     . verilog-mode)
+;; 				("\\.vh*$"     . verilog-mode)
+;; 				("\\.verilog$" . verilog-mode)
+;; 				("\\.verimix$" . verilog-mode)
+;; 				)
+;; 			  auto-mode-alist))
+
+;; bind the .v files with verilog-mdoe
+(autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
+(add-to-list 'auto-mode-alist '("\\.[ds]?vh?\\'" . verilog-mode))
+
+(setq verilog-indent-level             4
+      verilog-indent-level-module      4
+      verilog-indent-level-declaration 4
+      verilog-indent-level-behavioral  4
+      verilog-indent-level-directive   1
+      verilog-case-indent              4
+      verilog-cexp-indent              4
+      verilog-if-indent                4
+      verilog-auto-newline             nil
+      verilog-auto-indent-on-newline   t
+      verilog-tab-always-indent        t
+      verilog-auto-endcomments         t
+      verilog-minimum-comment-distance 40
+      verilog-indent-begin-after-if    nil
+      verilog-auto-lineup              'declarations
+      verilog-highlight-p1800-keywords nil
+      verilog-linter			 "my_lint_shell_command"
+      verilog-auto-delete-trailing-whitespace t
+      )
+
+;; open auto-complete-mode when open .v files
+(add-hook 'verilog-mode-hook 'auto-complete-mode)
 
 ;; Colorize numbers
 (font-lock-add-keywords
