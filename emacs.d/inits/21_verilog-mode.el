@@ -15,6 +15,11 @@
                                 (electric-indent-mode t)
                                 ))
 
+(add-hook 'verilog-mode-hook '(lambda ()
+  (add-hook 'write-file-functions (lambda()
+     (untabify (point-min) (point-max))
+     nil))))
+
 ;; (setq verilog-indent-level             8
 ;;       verilog-indent-level-module      8
 ;;       verilog-indent-level-declaration 8
