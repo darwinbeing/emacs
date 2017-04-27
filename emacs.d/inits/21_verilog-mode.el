@@ -202,14 +202,15 @@
 ;;       verilog-auto-delete-trailing-whitespace t
 ;;       )
 
-(setq verilog-indent-level             4
-      verilog-indent-level-module      4
-      verilog-indent-level-declaration 4
-      verilog-indent-level-behavioral  4
+;; mor1kx setting
+(setq verilog-indent-level             3
+      verilog-indent-level-module      3
+      verilog-indent-level-declaration 3
+      verilog-indent-level-behavioral  3
       verilog-indent-level-directive   0
-      verilog-case-indent              4
-      verilog-cexp-indent              4
-      verilog-if-indent                4
+      verilog-case-indent              2
+      verilog-cexp-indent              2
+      verilog-if-indent                2
       verilog-auto-newline             nil
       verilog-auto-indent-on-newline   t
       verilog-tab-always-indent        t
@@ -221,7 +222,6 @@
       verilog-linter			 "my_lint_shell_command"
       verilog-auto-delete-trailing-whitespace t
       )
-
 
 ;; open auto-complete-mode when open .v files
 (add-hook 'verilog-mode-hook 'auto-complete-mode)
