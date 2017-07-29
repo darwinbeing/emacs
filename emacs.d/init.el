@@ -1,5 +1,6 @@
 ;;; load-path settings
 (add-to-list 'load-path "~/.emacs.d/elpa")
+(add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 
 ;;; load configuration scripts
