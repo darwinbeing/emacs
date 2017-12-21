@@ -182,35 +182,14 @@
 ;;       verilog-auto-delete-trailing-whitespace t
 ;;       )
 
-;; (setq verilog-indent-level             4
-;;       verilog-indent-level-module      0
-;;       verilog-indent-level-declaration 0
-;;       verilog-indent-level-behavioral  4
-;;       verilog-indent-level-directive   0
-;;       verilog-case-indent              4
-;;       verilog-cexp-indent              4
-;;       verilog-if-indent                4
-;;       verilog-auto-newline             nil
-;;       verilog-auto-indent-on-newline   t
-;;       verilog-tab-always-indent        t
-;;       verilog-auto-endcomments         t
-;;       verilog-minimum-comment-distance 40
-;;       verilog-indent-begin-after-if    t
-;;       verilog-auto-lineup              'declarations
-;;       verilog-highlight-p1800-keywords nil
-;;       verilog-linter			 "my_lint_shell_command"
-;;       verilog-auto-delete-trailing-whitespace t
-;;       )
-
-;; mor1kx setting
-(setq verilog-indent-level             3
-      verilog-indent-level-module      3
-      verilog-indent-level-declaration 3
-      verilog-indent-level-behavioral  3
+(setq verilog-indent-level             4
+      verilog-indent-level-module      4
+      verilog-indent-level-declaration 4
+      verilog-indent-level-behavioral  4
       verilog-indent-level-directive   0
-      verilog-case-indent              2
-      verilog-cexp-indent              2
-      verilog-if-indent                2
+      verilog-case-indent              4
+      verilog-cexp-indent              4
+      verilog-if-indent                4
       verilog-auto-newline             nil
       verilog-auto-indent-on-newline   t
       verilog-tab-always-indent        t
@@ -222,6 +201,27 @@
       verilog-linter			 "my_lint_shell_command"
       verilog-auto-delete-trailing-whitespace t
       )
+
+;; mor1kx setting
+;; (setq verilog-indent-level             3
+;;       verilog-indent-level-module      3
+;;       verilog-indent-level-declaration 3
+;;       verilog-indent-level-behavioral  3
+;;       verilog-indent-level-directive   0
+;;       verilog-case-indent              2
+;;       verilog-cexp-indent              2
+;;       verilog-if-indent                2
+;;       verilog-auto-newline             nil
+;;       verilog-auto-indent-on-newline   t
+;;       verilog-tab-always-indent        t
+;;       verilog-auto-endcomments         t
+;;       verilog-minimum-comment-distance 40
+;;       verilog-indent-begin-after-if    t
+;;       verilog-auto-lineup              'declarations
+;;       verilog-highlight-p1800-keywords nil
+;;       verilog-linter			 "my_lint_shell_command"
+;;       verilog-auto-delete-trailing-whitespace t
+;;       )
 
 ;; open auto-complete-mode when open .v files
 (add-hook 'verilog-mode-hook 'auto-complete-mode)
