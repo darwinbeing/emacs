@@ -14,6 +14,8 @@
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (add-hook 'latex-mode-hook 'turn-on-reftex)
+(add-hook 'latex-mode-hook 'turn-off-auto-fill)
+(add-hook 'LaTeX-mode-hook 'turn-off-auto-fill)
 (setq reftex-plug-into-auctex t)
 (setq TeX-PDF-mode t)
 
