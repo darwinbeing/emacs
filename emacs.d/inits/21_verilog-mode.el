@@ -234,3 +234,32 @@
    ("\\(\\<[1-9][0-9_]*\\)?'o[0-7_xz]+\\>"    . font-lock-string-face)   ; octal
    ("\\(\\<[1-9][0-9_]*\\)?'b[01_xz]+\\>"     . font-lock-string-face)   ; binary
    ("\\<[0-9][0-9_]*\\>"                      . font-lock-string-face))) ; none
+
+
+;; (setq verilog-indent-level             2
+;;       verilog-indent-level-module      2
+;;       verilog-indent-level-declaration 2
+;;       verilog-indent-level-behavioral  2
+;;       verilog-indent-level-directive   2
+;;       verilog-case-indent              2
+;;       verilog-auto-newline             nil
+;;       verilog-auto-indent-on-newline   t
+;;       verilog-tab-always-indent        t
+;;       verilog-auto-endcomments         t
+;;       verilog-minimum-comment-distance 40
+;;       verilog-indent-begin-after-if    t
+;;       verilog-auto-lineup              'declarations
+;;       verilog-highlight-p1800-keywords t
+;;       verilog-linter                   "my_lint_shell_command"
+;;       verilog-auto-inst-param-value    t
+;;       )
+
+
+(setq hs-special-modes-alist
+      (cons '(verilog-mode "\\<begin\\>\\|\\<case\\>\\|\\<task\\>\\|\\<function\\>\\|\\<class\\>\\|\\<module\\>\\|\\<package\\>\\|("
+			   "\\<end\\>\\|\\<endcase\\>\\|\\<endtask\\>\\|\\<endfunction\\>\\|\\<endclass\\>\\|\\<endmodule\\>\\|\\<endpackage\\>\\|)"
+			   nil
+			   verilog-forward-sexp-function)
+	    hs-special-modes-alist))
+
+(add-hook 'verilog-mode 'hs-minor-mode)
