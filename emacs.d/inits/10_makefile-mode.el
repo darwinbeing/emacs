@@ -13,6 +13,6 @@
 	       ) auto-mode-alist))
 
 (add-hook 'makefile-mode-hook
-          '(lambda ()
+          #'(lambda ()
 	     (setq-default indent-tabs-mode t)
              ))

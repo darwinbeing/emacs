@@ -1,4 +1,4 @@
 ;;; for yasnippet.el
-; (package-install 'yasnippet)
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (package-install 'yasnippet)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)

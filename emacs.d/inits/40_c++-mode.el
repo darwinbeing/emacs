@@ -18,11 +18,11 @@
           ad-do-it)))                   ; default behavior
 
 ;; (add-hook 'c++-mode-hook
-;; 	  '(lambda()
+;; 	  #'(lambda()
 ;; 	     (setq c-basic-offset 8)))
 
 (add-hook 'c++-mode-hook
-	  '(lambda ()
+	  #'(lambda ()
 	     (setq c-indent-level 2)
 	     (setq c-basic-offset 2)
 	     (setq tab-width 2)
@@ -31,5 +31,5 @@
 	  )
 
 (add-hook 'c++-mode-common-hook
-	  '(lambda()
+	  #'(lambda()
 	     (c-toggle-auto-hungry-state)))

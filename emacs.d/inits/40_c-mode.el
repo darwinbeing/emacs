@@ -6,9 +6,9 @@
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (add-hook 'c-mode-hook
-          '(lambda ()
+          #'(lambda ()
              (setq c-basic-offset 8)))
 
 (add-hook 'c-mode-common-hook
-	  '(lambda()
+	  #'(lambda()
 	     (c-toggle-auto-hungry-state)))
