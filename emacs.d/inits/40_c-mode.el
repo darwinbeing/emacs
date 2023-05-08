@@ -12,3 +12,7 @@
 (add-hook 'c-mode-common-hook
 	  #'(lambda()
 	     (c-toggle-auto-hungry-state)))
+
+(add-hook 'c-mode-hook (lambda ()
+                         (interactive)
+                         (c-toggle-comment-style -1)))
