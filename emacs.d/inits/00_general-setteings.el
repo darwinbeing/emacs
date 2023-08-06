@@ -64,8 +64,11 @@
 )
 
 (set-scroll-bar-mode nil)
-(global-linum-mode t)
+;;(global-linum-mode t)
 (setq linum-format "%4d")
+;; RELATIVE Line Numbers
+(global-display-line-numbers-mode)
+(menu-bar-display-line-numbers-mode 'relative)
 
 (defun beginning-of-line-or-non-whitespace ()
   (interactive)
